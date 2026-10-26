@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Контрольная точка 2 — задания</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #eef2f5;
+      color: #2b2b2b;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #3d348b, #7b5cc9);
+      color: #ffffff;
+      text-align: center;
+      padding: 35px 20px;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 10px 20px 40px;
+    }
+    section {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 20px 25px;
+      margin: 25px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+    h1, h2 { margin-top: 0; }
+    code {
+      background: #f0f4f6;
+      border: 1px solid #d3dde2;
+      border-radius: 5px;
+      padding: 1px 6px;
+      font-family: Consolas, monospace;
+      font-size: 0.95em;
+    }
+    ol li, ul li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Контрольная точка 2. Мой учебный день</h1>
+</header>
+
+<main>
+
+  <section>
+    <h2>Общая информация</h2>
+    <p><b>Файлы для работы:</b> <code>template.html</code> (разметка, открывать в редакторе и браузере) и <code>styles.css</code> (стили). <b>Файл styles.css не удалять и не менять</b> — когда вы проставите теги, стили всё оформят автоматически.</p>
+    <p><b>Темы контрольной точки:</b> таблицы, списки и формы.</p>
+    <p>Каркас страницы (шапка, меню, разделы с заголовками, подвал) в <code>template.html</code> <b>уже готов</b> — ваша задача только наполнить разделы тегами по заданиям ниже.</p>
+    <p><b>Совет:</b> работайте по одному заданию. После каждого сохраняйте файл (Ctrl+S) и обновляйте страницу в браузере (F5) — сразу увидете результат. Если что-то «сломалось» — смотрите, что изменили последним.</p>
+  </section>
+
+  <section>
+    <h2>Задание 1. Таблица «Расписание»</h2>
+    <p>В разделе «Расписание» из строк с разделителями «|» сделайте настоящую таблицу.</p>
+    <ol>
+      <li>Таблицу оберните в <code>&lt;table&gt;</code>. Строки — <code>&lt;tr&gt;</code>, ячейки — <code>&lt;td&gt;</code>.</li>
+      <li>Первую строку (<code>Урок | Время | Предмет</code>) сделайте ячейками-заголовками <code>&lt;th&gt;</code>.</li>
+      <li><b>Объединение:</b> в строке «Обеденный перерыв» первая ячейка должна занимать 2 колонки: <code>&lt;td colspan="2"&gt;Обеденный перерыв&lt;/td&gt;</code>. В этой строке будет всего 2 ячейки, а не 3!</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Задание 2. Списки дел и предметов</h2>
+    <p>В разделе «Мои списки» разметьте два списка.</p>
+    <ol>
+      <li>«Дела перед уроками» — маркированный список <code>&lt;ul&gt;</code>, каждый пункт — <code>&lt;li&gt;</code>.</li>
+      <li>«Топ-3 моих предмета» — нумерованный список <code>&lt;ol&gt;</code>, каждый пункт — <code>&lt;li&gt;</code>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Задание 3. Анкета</h2>
+    <p>В разделе «Анкета» соберите форму.</p>
+    <ol>
+      <li>Всю анкету оберните в <code>&lt;form action="#" method="post"&gt;</code>.</li>
+      <li>«Имя» — <code>&lt;label&gt;</code> + <code>&lt;input type="text" name="name" required&gt;</code>. Свяжите их: <code>for</code> у label равен <code>id</code> у input.</li>
+      <li>«E-mail» — то же, но <code>type="email"</code> (проверит наличие @ при отправке).</li>
+      <li>«Моя группа» — <code>&lt;select name="group"&gt;</code> с тремя <code>&lt;option&gt;</code>: ПИ-101, ИС-202, БИ-303. Первая группа — выбрана по умолчанию (атрибут <code>selected</code>).</li>
+      <li>«Пара слов о себе» — <code>&lt;textarea name="about" rows="4" placeholder="Напишите пару предложений…"&gt;&lt;/textarea&gt;</code>.</li>
+      <li>Две кнопки: <code>&lt;input type="submit" value="Отправить"&gt;</code> и <code>&lt;input type="reset" value="Очистить"&gt;</code>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Задание 4. Мини-опрос: radio и checkbox</h2>
+    <p>В разделе «Мини-опрос» разметьте кнопки выбора вариантов.</p>
+    <ol>
+      <li><b>Radio:</b> три кнопки <code>&lt;input type="radio" name="route"&gt;</code> — Автобус, Метро, Пешком. <b>name у всех одинаковый</b>, id — разные. Каждую подпишите через <code>&lt;label for="…"&gt;</code> — иначе можно выбрать все три сразу.</li>
+      <li>Чекбокс «Я согласен(на) на обработку данных» — с атрибутом <code>required</code>, подпись через <code>&lt;label for="…"&gt;</code>.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
